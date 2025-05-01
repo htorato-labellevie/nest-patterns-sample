@@ -2,6 +2,8 @@
 
 このプロジェクトは、NestJS を使って以下の GoF デザインパターンの動作を学ぶためのサンプルです。
 
+---
+
 ## ✅ 含まれているパターン（★★★ 頻出・必須レベル）
 
 - **Singleton**：インスタンスを1つに制限
@@ -21,38 +23,45 @@
 cd nest-patterns-sample
 ```
 
+### 2. 依存パッケージをインストール
 
-
-
-###　2. 依存パッケージをインストール
 ```bash
 npm install
 ```
-#### ※ @nestjs/platform-express@10.x が必要です。NestJS 10 系で統一されています。
 
+> ※ `@nestjs/platform-express@10.x` が必要です。NestJS 10 系で統一されています。
 
 ### 3. 開発モードで起動
+
 ```bash
 npm run start:dev
 ```
 
-### 動作確認
+---
+
+## 🔍 動作確認
+
 以下のエンドポイントにアクセスして、各パターンの挙動を確認できます：
 
-パターン	エンドポイント	説明
-Singleton	GET /singleton	ログ出力（Singleton）
-Factory	GET /factory	Windows ボタン生成
-Strategy	GET /strategy	PayPal で支払い処理
-Observer	GET /observer	観察者にイベント通知
-Template Method	GET /template	日課ルーティン実行
-Decorator	GET /decorator	コーヒーにミルク追加
+| パターン         | エンドポイント         | 説明                          |
+|------------------|------------------------|-------------------------------|
+| Singleton        | `GET /singleton`       | ログ出力（Singleton）         |
+| Factory          | `GET /factory`         | Windows ボタン生成            |
+| Strategy         | `GET /strategy`        | PayPal で支払い処理           |
+| Observer         | `GET /observer`        | 観察者にイベント通知          |
+| Template Method  | `GET /template`        | 日課ルーティン実行            |
+| Decorator        | `GET /decorator`       | コーヒーにミルク追加          |
 
 ```bash
 curl http://localhost:3000/strategy
 # 出力: Paid ¥1000 with PayPal
 ```
 
-### ディレクトリ構成（src）
+---
+
+## 📁 ディレクトリ構成（src）
+
+```
 src/
 ├── main.ts
 ├── app.module.ts
@@ -64,3 +73,11 @@ src/
 ├── observer/
 ├── template/
 └── decorator/
+```
+
+---
+
+## 🧠 補足
+
+- 各サービスは NestJS の DI により Singleton として提供されています。
+- 学習用に簡易的な実装を採用しており、今後拡張も容易です。
