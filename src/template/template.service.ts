@@ -6,19 +6,19 @@ abstract class DailyRoutine {
   }
 
   private wakeUp(): string {
-    return 'Wake up';
+    return '朝起きる';
   }
 
   protected abstract doWork(): string;
 
   private relax(): string {
-    return 'Relax in the evening';
+    return '夜にリラックスする';
   }
 }
 
 class EngineerRoutine extends DailyRoutine {
   protected doWork(): string {
-    return 'Code all day';
+    return '一日中コーディングする';
   }
 }
 

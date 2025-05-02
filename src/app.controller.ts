@@ -34,4 +34,24 @@ export class AppController {
   decorator() {
     return this.appService.useDecorator();
   }
+
+  @Get('builder')
+  builder() {
+    return this.appService.useBuilder();
+  }
+
+  @Get('adapter')
+  adapter() {
+    return this.appService.useAdapter();
+  }
+
+  @Get('bridge')
+  bridge() {
+    return this.appService.useBridge();
+  }
+
+  @Get('proxy')
+  proxy() {
+    return this.appService.useProxy();
+  }
 }

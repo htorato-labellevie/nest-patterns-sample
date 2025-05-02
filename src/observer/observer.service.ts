@@ -7,8 +7,8 @@ interface Observer {
 @Injectable()
 export class ObserverService {
   private observers: Observer[] = [
-    { update: (msg) => `Alice received: ${msg}` },
-    { update: (msg) => `Bob received: ${msg}` },
+    { update: (msg) => `アリスが受信しました: ${msg}` },
+    { update: (msg) => `ボブが受信しました: ${msg}` },
   ];
 
   notifyAll(message: string): string[] {

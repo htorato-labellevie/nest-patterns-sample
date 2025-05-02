@@ -6,13 +6,13 @@ interface PaymentStrategy {
 
 class CreditCardStrategy implements PaymentStrategy {
   pay(amount: number): string {
-    return `Paid ¥${amount} with Credit Card`;
+    return `クレジットカードで ¥${amount} 支払いました`;
   }
 }
 
 class PaypalStrategy implements PaymentStrategy {
   pay(amount: number): string {
-    return `Paid ¥${amount} with PayPal`;
+    return `PayPalで ¥${amount} 支払いました`;
   }
 }
 

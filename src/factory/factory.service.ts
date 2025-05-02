@@ -6,19 +6,19 @@ interface Button {
 
 class WindowsButton implements Button {
   render(): string {
-    return 'Rendered Windows Button';
+    return 'Windowsボタンを描画しました';
   }
 }
 
 class MacButton implements Button {
   render(): string {
-    return 'Rendered Mac Button';
+    return 'Macボタンを描画しました';
   }
 }
 
 @Injectable()
 export class FactoryService {
   createButton(): Button {
-    return new WindowsButton();
+    return new WindowsButton(); // ここで条件分岐して MacButton に切り替えることも可能
   }
 }

@@ -7,6 +7,10 @@ import { StrategyService } from './strategy/strategy.service';
 import { ObserverService } from './observer/observer.service';
 import { TemplateService } from './template/template.service';
 import { DecoratorService } from './decorator/decorator.service';
+import { BuilderService } from './builder/builder.service';
+import { AdapterService } from './adapter/adapter.service';
+import { BridgeService } from './bridge/bridge.service';
+import { ProxyService } from './proxy/proxy.service';
 
 @Module({
   imports: [],
@@ -19,6 +23,10 @@ import { DecoratorService } from './decorator/decorator.service';
     ObserverService,
     TemplateService,
     DecoratorService,
+    BuilderService,
+    AdapterService,
+    BridgeService,
+    ProxyService,
   ],
 })
 export class AppModule {}
