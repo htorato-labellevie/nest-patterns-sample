@@ -54,4 +54,25 @@ export class AppController {
   proxy() {
     return this.appService.useProxy();
   }
+
+  @Get('command')
+  command() {
+    return this.appService.useCommand();
+  }
+
+  @Get('state')
+  state() {
+    return this.appService.useState();
+  }
+
+  @Get('composite')
+  composite() {
+    return this.appService.useComposite();
+  }
+
+  @Get('chain')
+  chain() {
+    return this.appService.useChain();
+  }
+
 }

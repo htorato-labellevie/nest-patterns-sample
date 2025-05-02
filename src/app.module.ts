@@ -11,6 +11,10 @@ import { BuilderService } from './builder/builder.service';
 import { AdapterService } from './adapter/adapter.service';
 import { BridgeService } from './bridge/bridge.service';
 import { ProxyService } from './proxy/proxy.service';
+import { CommandService } from './command/command.service';
+import { StateService } from './state/state.service';
+import { CompositeService } from './composite/composite.service';
+import { ChainService } from './chain/chain.service';
 
 @Module({
   imports: [],
@@ -27,6 +31,10 @@ import { ProxyService } from './proxy/proxy.service';
     AdapterService,
     BridgeService,
     ProxyService,
+    CommandService,
+    StateService,
+    CompositeService,
+    ChainService,
   ],
 })
 export class AppModule {}

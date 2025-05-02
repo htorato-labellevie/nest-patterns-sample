@@ -9,6 +9,10 @@ import { BuilderService } from './builder/builder.service';
 import { AdapterService } from './adapter/adapter.service';
 import { BridgeService } from './bridge/bridge.service';
 import { ProxyService } from './proxy/proxy.service';
+import { CommandService } from './command/command.service';
+import { StateService } from './state/state.service';
+import { CompositeService } from './composite/composite.service';
+import { ChainService } from './chain/chain.service';
 
 @Injectable()
 export class AppService {
@@ -23,6 +27,10 @@ export class AppService {
     private readonly adapter: AdapterService,
     private readonly bridge: BridgeService,
     private readonly proxy: ProxyService,
+    private readonly command: CommandService,
+    private readonly state: StateService,
+    private readonly composite: CompositeService,
+    private readonly chain: ChainService,
   ) {}
 
   useSingleton() {
@@ -64,5 +72,21 @@ export class AppService {
   
   useProxy() {
     return this.proxy.getData(); // プロキシパターンで遅延データ取得を制御
+  }
+
+  useCommand() {
+    return this.command.executeCommand(); // コマンドパターンで操作を実行
+  }
+  
+  useState() {
+    return this.state.changeState(); // ステートパターンで状態を切り替え
+  }
+  
+  useComposite() {
+    return this.composite.build(); // コンポジットパターンで木構造を組み立て
+  }
+  
+  useChain() {
+    return this.chain.process('auth'); // チェーン・オブ・リスポンシビリティで処理実行
   }
 }
