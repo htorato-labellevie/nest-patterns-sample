@@ -12,6 +12,10 @@
 - **Observer**：イベント通知
 - **Template Method**：処理の共通化とカスタマイズ
 - **Decorator**：機能の柔軟な追加
+- **Builder**：複雑なオブジェクトの構築手順を分離
+- **Adapter**：互換性のないインタフェースの橋渡し
+- **Bridge**：抽象と実装の分離
+- **Proxy**：アクセス制御や遅延処理の代理
 
 ---
 
@@ -43,18 +47,22 @@ npm run start:dev
 
 以下のエンドポイントにアクセスして、各パターンの挙動を確認できます：
 
-| パターン         | エンドポイント         | 説明                          |
-|------------------|------------------------|-------------------------------|
-| Singleton        | `GET /singleton`       | ログ出力（Singleton）         |
-| Factory          | `GET /factory`         | Windows ボタン生成            |
-| Strategy         | `GET /strategy`        | PayPal で支払い処理           |
-| Observer         | `GET /observer`        | 観察者にイベント通知          |
-| Template Method  | `GET /template`        | 日課ルーティン実行            |
-| Decorator        | `GET /decorator`       | コーヒーにミルク追加          |
+| パターン         | エンドポイント         | 説明                                  |
+|------------------|------------------------|---------------------------------------|
+| Singleton        | `GET /singleton`       | ログ出力（Singleton）                 |
+| Factory          | `GET /factory`         | Windows ボタン生成                    |
+| Strategy         | `GET /strategy`        | PayPal で支払い処理                   |
+| Observer         | `GET /observer`        | 観察者にイベント通知                  |
+| Template Method  | `GET /template`        | 日課ルーティン実行                    |
+| Decorator        | `GET /decorator`       | コーヒーにミルク追加                  |
+| Builder          | `GET /builder`         | ビルダーパターンでコーヒーを構築     |
+| Adapter          | `GET /adapter`         | 既存API（英語）を日本語に変換         |
+| Bridge           | `GET /bridge`          | リモコンからTVを操作（抽象/実装分離）|
+| Proxy            | `GET /proxy`           | 遅延初期化でデータを取得              |
 
 ```bash
-curl http://localhost:3000/strategy
-# 出力: Paid ¥1000 with PayPal
+curl http://localhost:3000/builder
+# 出力: Lサイズのコーヒー（ミルク入り、砂糖入り）
 ```
 
 ---
@@ -62,17 +70,28 @@ curl http://localhost:3000/strategy
 ## 📁 ディレクトリ構成（src）
 
 ```
-src/
-├── main.ts
-├── app.module.ts
-├── app.controller.ts
-├── app.service.ts
-├── singleton/
-├── factory/
-├── strategy/
-├── observer/
-├── template/
-└── decorator/
+nest-patterns-sample/
+├── node_modules/
+├── src/
+│   ├── adapter/
+│   ├── bridge/
+│   ├── builder/
+│   ├── decorator/
+│   ├── factory/
+│   ├── observer/
+│   ├── proxy/
+│   ├── singleton/
+│   ├── strategy/
+│   ├── template/
+│   ├── app.controller.ts
+│   ├── app.module.ts
+│   ├── app.service.ts
+│   └── main.ts
+├── .gitignore
+├── package-lock.json
+├── package.json
+├── README.md
+└── tsconfig.json
 ```
 
 ---
